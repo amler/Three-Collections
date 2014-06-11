@@ -1,0 +1,46 @@
+// bower:scss
+// endbower
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+.column-three,
+.column-two,
+.column-one {
+    float: left;
+    background-color: #FAFFFA;
+    min-height: 50px;
+    width: 350px;
+
+    .list-item {
+        padding: 10px;
+        border-bottom: 1px solid #333;
+
+        p {
+            display: inline-block;
+            margin: 0;
+            padding: 3px;
+        }
+
+        button {
+            background-color: #66E0C2;
+            border: 0;
+            float: right;
+            margin: 0 5px 0 0;
+            padding: 5px;
+            text-align: center;
+            width: 50px;
+            outline: none;
+
+            &:hover {
+                background-color: #A3ECDA;   
+            }
+
+            &:active {
+                background-color: #52B39B;
+                color: #FFF;   
+            }
+        }
+    }
+}
