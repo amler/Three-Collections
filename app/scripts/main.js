@@ -82,25 +82,35 @@ var ModelView = Backbone.View.extend({
 	},
 
 	copyColumnOne: function() {
-		console.log(this.model);
-		debugger
-
+		/*console.log(this.model);
 		itemsList.add(this.model)
+		debugger
+		this.render();*/
+		$.post('http://tiny-pizza-server.herokuapp.com/collections/scamler-list3', { 
+			item: this.model.attributes.item, 
+		});
 		this.render();
 	},
 	copyColumnTwo: function() {
-		console.log(this.model);
+		/*console.log(this.model);
 		debugger
 		itemsListTwo.create(this.model)
-		itemsListTwo.model.save()
+		itemsListTwo.first().save()
 		console.log(itemsListTwo);
 		debugger
+		this.render();*/
+		$.post('http://tiny-pizza-server.herokuapp.com/collections/scamler-list2', { 
+			item: this.model.attributes.item, 
+		});
 		this.render();
 
 	},
 
 	copyColumnThree: function() {
-		itemsListThree.clone(this.model)
+		$.post('http://tiny-pizza-server.herokuapp.com/collections/scamler-list3', { 
+			item: this.model.attributes.item, 
+		});
+		this.render();
 	}
 
 });
