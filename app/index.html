@@ -13,6 +13,7 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
@@ -20,23 +21,50 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <div class="column-one">
+        <div class="responsive-header">
+            <a href="#" class="logo"></a>
+            <a href="#" class="hamburger-menu"> 
+                <img src="http://clearslide.s3.amazonaws.com/v2/images/3d1a17df.menu.png"/>
+            </a>
+            <ul>
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+            </ul>   
+        </div>
+        <div class="items column-one">
+            <h1>Collection 1</h1>
             <!-- PLACE FIRST COLLECTION HERE -->
         </div>
-        <div class="column-two">
-            <!-- PLACE FIRST COLLECTION HERE -->
+        <div class="items column-two">
+            <h1>Collection 2</h1>
+            <!-- PLACE Second COLLECTION HERE -->
         </div>
-        <div class="column-three">
-            <!-- PLACE FIRST COLLECTION HERE -->
+        <div class="items column-three">
+            <h1>Collection 3</h1>
+            <!-- PLACE Third COLLECTION HERE -->
         </div>
+        <div class="button-container"></div>
 
         <script type="text/template" class="list-item-template">
             <p class="model-item"><%= item %></p>
-            <button class="move button">Move</button>
-            <button class="copy button">Copy</button>
+            <button class="select button">Select</button>
+           <!-- <button class="copy button">Copy</button> -->
         </script>
-
+        <script type="text/template" class="column-choice-template">
+            <div class="collection-choice">
+                <div class="moving-buttons">
+                    <button class="move-collection-one destroy-button">Move to Collection 1</button>
+                    <button class="move-collection-two destroy-button">Move to Collection 2</button>
+                    <button class="move-collection-three destroy-button">Move to Collection 3</button>
+                </div>
+                <div class="copying-buttons">
+                    <button class="copy-collection-one copy-button">Copy to Collection 1</button>
+                    <button class="copy-collection-two copy-button">Copy to Collection 2</button>
+                    <button class="copy-collection-three copy-button">Copy to Collection 3</button>
+                </div
+            </div>
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

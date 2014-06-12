@@ -4,14 +4,61 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    margin: 0;
+    padding: 0;
+   // font-size: 112.5%;
 }
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+.responsive-header {
+    background-color: #09C;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    min-height: 100px;
+    
+    .logo {
+        background-image: url('http://www.clker.com/cliparts/e/9/1/9/11971019881332681016shokunin_funny_face.svg');
+        background-size: 50% auto;
+        background-repeat: no-repeat;
+        display: block;
+        float: left;
+        margin: 1% 0 0 20%;
+        min-height: 80px;
+        width: 180px;
+    }
+
+    .hamburger-menu img {
+        display: none;
+        float: left;
+        margin: 30px 0 0 0; 
+        height: 40px;
+        width: 40px;
+    }
+
+    ul {
+        margin: 30px 0 0 0;
+        list-style: none;
+        display: block;
+
+        li {
+            display: inline-block;
+            padding: 10px;
+        }
+    }
+}
+
 .column-three,
 .column-two,
 .column-one {
     float: left;
     background-color: #FAFFFA;
-    min-height: 50px;
-    width: 350px;
+    margin: 100px auto 0;
+    margin: 10% 1% 5%;
+    width: 31.333%;
 
     .list-item {
         padding: 10px;
@@ -26,11 +73,11 @@ body {
         button {
             background-color: #66E0C2;
             border: 0;
-            float: right;
+            float: left;
             margin: 0 5px 0 0;
             padding: 5px;
             text-align: center;
-            width: 50px;
+            min-width: 50px;
             outline: none;
 
             &:hover {
@@ -43,4 +90,149 @@ body {
             }
         }
     }
+
+    .collection-choice {
+        border: 1px solid red;
+        background-color: #333;
+        padding: 20px;
+        max-width: 420px;
+        
+        .moving-buttons,
+        .copying-buttons {
+            clear: both;
+            margin: 5px;
+            padding: 5px;
+            min-height: 75px;
+
+            .copy-button {
+                display: block;
+                background-color: #0099FF;
+                border: 0;
+                margin: 0 0 5px 0;
+                text-align: center;
+                outline: none;
+                width: 100%;
+
+                &:hover {
+                    background-color: #4DB8FF;   
+                }
+
+                &:active {
+                    background-color: #007ACC;
+                    color: #FFF;   
+                }
+            }
+
+            .destroy-button {
+                background-color: #C9F;
+                border: 0;
+                margin: 0 0 5px 0;
+                text-align: center;
+                outline: none;
+                width: 100%;
+
+                &:hover {
+                    background-color: #D6ADFF;   
+                }
+
+                &:active {
+                    background-color: #A37ACC;
+                    color: #FFF;   
+                }
+            }
+        }
+    }
 }
+
+@media only screen and (max-width : 600px) {
+
+    h1 {
+        font-size: 1em;
+    }
+    p {
+        font-size: 1em;
+    }
+
+    img {
+        // Failing at making it visible
+        display: block;
+    }
+    a {    
+        color: #09C;
+    }
+    ul { 
+        display: none;
+        padding: 10px;
+        background-color: #FFF;
+        border: 5px solid #444;
+        margin: 30px 0 30px 0;
+        width: 50%;
+    
+        li {
+            text-align: center;
+            width: 100%;
+
+        }
+    }
+} // closing media
+
+@media screen and (max-width: 680px) {
+ 
+    h1 {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+ 
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        display: block;
+        clear: both;
+    }
+
+    .items {
+        overflow: scroll;
+        min-height: 40%;
+    } 
+}
+
+
+/* .container-left {
+    display: inline-block;
+    width: 31.333%;
+    margin-right: 1.5%;
+    height: 70em;
+    background-color: blue;
+    overflow: scroll;
+}
+
+.container:nth-of-type(2n) {
+    background-color: yellow;
+}
+
+.container:nth-of-type(3n) {
+    background-color: red;
+    margin-right: 0;
+} */
+
+/*   .box {
+    width: 45%;
+    margin-right: 10%;
+  }
+  
+  .box:nth-of-type(3n){
+    margin-right: 10%;
+    background: red;
+  }
+  
+  .box:nth-of-type(2n) {
+    margin-right: 0;
+    background: yellow;
+  }
+  
+ 
+} */

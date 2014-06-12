@@ -33,16 +33,20 @@ var ColumnThreeCollection = Backbone.Collection.extend({
 // View
 /////////////////////////
 
-var model;
-
 var ModelView = Backbone.View.extend({
 	template: _.template($('.list-item-template').text()),
+	columnChoiceTemplate: _.template($('.column-choice-template').text()),
 	//editTemplate: _.template($('.move-item-template').text()),
 	className: "list-item",
 
 	events: {
-		'click .move' : 'moveItemMethod',
-		'click .copy' : 'copyItemMethod'
+		'click .select'					: 'selectItem',
+		'click .move-collection-one' 	: 'moveColumnOne',
+		'click .move-collection-two' 	: 'moveColumnTwo',
+		'click .move-collection-three' 	: 'moveColumnThree',
+		'click .copy-collection-one' 	: 'copyColumnOne',
+		'click .copy-collection-two' 	: 'copyColumnTwo',
+		'click .copy-collection-three'	: 'copyColumnThree'
 	},
 
 	initialize: function() {
@@ -56,14 +60,47 @@ var ModelView = Backbone.View.extend({
 		this.$el.html(renderedTemplate);
 	},
 
-	moveItemMethod: function() {
-		model = this.model
-
-		console.log(model);
+	columnChoiceRender: function() {
+		var renderedTemplate = this.columnChoiceTemplate(this.model.attributes)
+		this.$el.html(renderedTemplate);
 	},
 
-	copyItemMethod: function(){
-		console.log('activated copyItemMethod');
+	selectItem: function() {
+		this.columnChoiceRender();
+	},
+
+	moveColumnOne: function() {
+		//collection.pop([options])
+	},
+
+	moveColumnTwo: function() {
+
+	},
+
+	moveColumnThree: function() {
+
+	},
+
+	copyColumnOne: function() {
+		console.log(this.model);
+		debugger
+
+		itemsList.add(this.model)
+		this.render();
+	},
+	copyColumnTwo: function() {
+		console.log(this.model);
+		debugger
+		itemsListTwo.create(this.model)
+		itemsListTwo.model.save()
+		console.log(itemsListTwo);
+		debugger
+		this.render();
+
+	},
+
+	copyColumnThree: function() {
+		itemsListThree.clone(this.model)
 	}
 
 });
