@@ -6,23 +6,16 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-   // font-size: 112.5%;
+   // font-size: 112.3%;
 }
 
 a {
     text-decoration: none;
     color: #FFF;
 }
-
-.user-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.80);
+h2 {
+    margin: 20px 0 10px 20px;
 }
-
 .responsive-header {
     background-color: #09C;
     margin: 0;
@@ -82,7 +75,7 @@ a {
             background-color: #66E0C2;
             border: 0;
             float: left;
-            margin: 0 5px 10px 0;
+            margin: 0 5px 10px 3%;
             padding: 5px;
             text-align: center;
             min-width: 50px;
@@ -99,38 +92,63 @@ a {
         }
     }
 
-    .collection-choice {
-        background-color: #333;
-        overflow: hidden;
-        padding: 5px;
+    .user-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.80);
 
-        .copy-left,
-        .copy-right {
-            background-color: #0099FF;
-            padding: 5px;
+        #modal {
+            border-radius: 5px;
+            background-color: #FFF;
+            position: fixed;
+            width: 50%;
+            top: 70%;
+            left: 50%;
+            margin: -25% 0 0 -25%;
+            transform: scale(1.5);
+            padding: 20px;
 
-            &:hover {
-                background-color: #4DB8FF;   
+            .cancel {
+                margin: 0 0 3% 3%;
             }
 
-            &:active {
-                background-color: #007ACC;
-                color: #FFF;   
-            }
-        }
-
-        .move-left,
-        .move-right {
-            background-color: #C9F;
-            padding: 5px;
-
-            &:hover {
-                background-color: #D6ADFF;   
+            .delete {
+                clear: right;
             }
 
-            &:active {
-                background-color: #A37ACC;
-                color: #FFF;   
+            .move-left,
+            .copy-left {
+                margin: 0 3% 3% 0;
+                background-color: #0099FF;
+                padding: 5px;
+                
+
+                &:hover {
+                    background-color: #4DB8FF;   
+                }
+
+                &:active {
+                    background-color: #007ACC;
+                    color: #FFF;   
+                }
+            }
+            .copy-right,
+            .move-right {
+                margin: 0 3% 3% 0;
+                background-color: #C9F;
+                padding: 5px;
+
+                &:hover {
+                    background-color: #D6ADFF;   
+                }
+
+                &:active {
+                    background-color: #A37ACC;
+                    color: #FFF;   
+                }
             }
         }
     }

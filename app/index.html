@@ -21,7 +21,7 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="user-modle"></div>
+        
         <div class="responsive-header">
             <a href="#" class="logo"></a>
             <a href="#" class="hamburger-menu"> 
@@ -36,7 +36,6 @@
         <div class="collections-container">
             <!-- PLACE ALL COLLECTIONS HERE for every instance-->
         </div>
-        <div class="button-container"></div>
 
         <!-- Script for the view - a visual representative of models -->
         <script type="text/template" class="list-template">
@@ -46,14 +45,18 @@
 
         <!-- Script for the view - render buttons for user actions -->
         <script type="text/template" class="column-choice-template">
-            <div class="collection-choice">
-                <button class="cancel">Cancel</button>
-                <button class="delete">Delete</button>
-                <button class="copy-right">Copy Right</button>
-                <button class="move-right">Move Right</button>
-                <button class="copy-left">Copy Left</button>
-                <button class="move-left">Move Left</button>
+        <div class="user-modal">
+            <div id="modal">
+                <div class="collection-choice">
+                    <button class="cancel">Cancel</button>
+                    <button class="delete">Delete</button>
+                    <button class="copy-left">Copy Left</button>
+                    <button class="move-left">Move Left</button>
+                    <button class="copy-right">Copy Right</button>
+                    <button class="move-right">Move Right</button>
+                </div>
             </div>
+        </div>
         </script>
 
         <!-- build:js scripts/vendor.js -->
