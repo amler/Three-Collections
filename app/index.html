@@ -21,6 +21,7 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="user-modle"></div>
         <div class="responsive-header">
             <a href="#" class="logo"></a>
             <a href="#" class="hamburger-menu"> 
@@ -32,37 +33,26 @@
                 <li><a href="#">Work</a></li>
             </ul>   
         </div>
-        <div class="items column-one">
-            <h1>Collection 1</h1>
-            <!-- PLACE FIRST COLLECTION HERE -->
-        </div>
-        <div class="items column-two">
-            <h1>Collection 2</h1>
-            <!-- PLACE Second COLLECTION HERE -->
-        </div>
-        <div class="items column-three">
-            <h1>Collection 3</h1>
-            <!-- PLACE Third COLLECTION HERE -->
+        <div class="collections-container">
+            <!-- PLACE ALL COLLECTIONS HERE for every instance-->
         </div>
         <div class="button-container"></div>
 
-        <script type="text/template" class="list-item-template">
-            <p class="model-item"><%= item %></p>
+        <!-- Script for the view - a visual representative of models -->
+        <script type="text/template" class="list-template">
             <button class="select button">Select</button>
-           <!-- <button class="copy button">Copy</button> -->
+            <p class="model-item"><%= item %></p>
         </script>
+
+        <!-- Script for the view - render buttons for user actions -->
         <script type="text/template" class="column-choice-template">
             <div class="collection-choice">
                 <div class="moving-buttons">
-                    <button class="move-collection-one destroy-button">Move to Collection 1</button>
-                    <button class="move-collection-two destroy-button">Move to Collection 2</button>
-                    <button class="move-collection-three destroy-button">Move to Collection 3</button>
+                    <button class="cancel">cancel</button>
+                    <button class="delete">Delete</button>
+                    <button class="copy">Copy</button>
+                    <button class="move">Move</button>
                 </div>
-                <div class="copying-buttons">
-                    <button class="copy-collection-one copy-button">Copy to Collection 1</button>
-                    <button class="copy-collection-two copy-button">Copy to Collection 2</button>
-                    <button class="copy-collection-three copy-button">Copy to Collection 3</button>
-                </div
             </div>
         </script>
 
@@ -85,6 +75,8 @@
         </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/view.js"></script>
+        <script src="scripts/model-collection.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
