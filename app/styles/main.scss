@@ -16,10 +16,10 @@ a {
 
 .user-modal {
     position: fixed;
-    top: 0,
-    left: 0,
-    height: 100%,
-    width: 100%,
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-color: rgba(51, 51, 51, 0.80);
 }
 
@@ -82,7 +82,7 @@ a {
             background-color: #66E0C2;
             border: 0;
             float: left;
-            margin: 0 5px 0 0;
+            margin: 0 5px 10px 0;
             padding: 5px;
             text-align: center;
             min-width: 50px;
@@ -100,53 +100,37 @@ a {
     }
 
     .collection-choice {
-        border: 1px solid red;
         background-color: #333;
-        padding: 20px;
-        max-width: 420px;
-        
-        .moving-buttons,
-        .copying-buttons {
-            clear: both;
-            margin: 5px;
+        overflow: hidden;
+        padding: 5px;
+
+        .copy-left,
+        .copy-right {
+            background-color: #0099FF;
             padding: 5px;
-            min-height: 75px;
 
-            .copy {
-                display: block;
-                background-color: #0099FF;
-                border: 0;
-                margin: 0 0 5px 0;
-                text-align: center;
-                outline: none;
-                width: 100%;
-
-                &:hover {
-                    background-color: #4DB8FF;   
-                }
-
-                &:active {
-                    background-color: #007ACC;
-                    color: #FFF;   
-                }
+            &:hover {
+                background-color: #4DB8FF;   
             }
 
-            .move {
-                background-color: #C9F;
-                border: 0;
-                margin: 0 0 5px 0;
-                text-align: center;
-                outline: none;
-                width: 100%;
+            &:active {
+                background-color: #007ACC;
+                color: #FFF;   
+            }
+        }
 
-                &:hover {
-                    background-color: #D6ADFF;   
-                }
+        .move-left,
+        .move-right {
+            background-color: #C9F;
+            padding: 5px;
 
-                &:active {
-                    background-color: #A37ACC;
-                    color: #FFF;   
-                }
+            &:hover {
+                background-color: #D6ADFF;   
+            }
+
+            &:active {
+                background-color: #A37ACC;
+                color: #FFF;   
             }
         }
     }

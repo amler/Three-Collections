@@ -7,24 +7,25 @@
 
 var ListView = Backbone.View.extend({
 	template: _.template($('.list-template').text()),
-	columnChoiceTemplate: _.template($('.column-choice-template').text()),
+	userChoiceTemplate: _.template($('.column-choice-template').text()),
 
-	className: "list-item",
+	className: 'list-item',
 
 	events: {
-		'click .select'	: 'selectItem',
-		'click .cancel'	: 'render',
-		'click .move' 	: 'move',
-		'click .copy' 	: 'copy',
-		'click .delete' : 'destroy'
+		'click .select'		:	'selectItem',
+		'click .cancel'		:	'render',
+		'click .move-right'	:	'moveRight',
+		'click .copy-right'	:	'copyRight',
+		'click .move-left'	:	'moveLeft',
+		'click .copy-left'	:	'copyLeft',
+		'click .delete'		:	'destroy'
 	},
 
 	initialize: function(options) {
 		this.listenTo(this.model, 'destroy', this.remove);
 		this.listenTo(this.model, 'add', this.render);
 		this.listenTo(this.model, 'change', this.render);
-
-		this.$container = options.container 
+		this.$container = options.container;
 		this.$container.append(this.el);
 		this.render();
  	},
@@ -36,7 +37,7 @@ var ListView = Backbone.View.extend({
 	},
 
 	userChoice: function() {
-		var renderedTemplate = this.columnChoiceTemplate(this.model.attributes)
+		var renderedTemplate = this.userChoiceTemplate(this.model.attributes)
 		this.$el.html(renderedTemplate);
 		return this;
 	},
@@ -45,17 +46,17 @@ var ListView = Backbone.View.extend({
 		this.userChoice();
 	},
 
-	move: function(){
+	moveRight: function(){
 		var destroyedModel = this.model;
 	// Returns the index at which value can be found in the array, 
 	// or -1 if value is not present in the array. _.lastIndexOf(array, value, [fromIndex])
 	// Destroying the model before index resulted in -1
-		this.copy();
+		this.copyRight();
 		destroyedModel.destroy();
 		
 	},
 
-	copy: function(){
+	copyRight: function(){
 	// Returns the index at which value can be found in the array, 
 	// or -1 if value is not present in the array. _.lastIndexOf(array, value, [fromIndex])
 	// Destroying the model before index resulted in -1
@@ -65,14 +66,32 @@ var ListView = Backbone.View.extend({
 			var savedModel = listArray[0].add({item: this.model.attributes.item})
 		} else {
 			var savedModel = listArray[index + 1].add({item: this.model.attributes.item})
-		} 
-		console.log(savedModel);
+		}
 		savedModel.save();
 		this.render();
 	},
 
+	copyLeft: function(){
+		var index = _.indexOf(listArray, this.model.collection);
+		if (index === 0){
+			console.log(index);
+			var savedModel = listArray[(listArray.length - 1)].add({item: this.model.attributes.item})
+			debugger
+		} else {
+			var savedModel = listArray[index - 1].add({item: this.model.attributes.item})
+		}
+		savedModel.save();
+		this.render();
+	},
+
+	moveLeft: function(){
+		var destroyedModel = this.model;
+		this.copyLeft();
+		destroyedModel.destroy();
+	},
+
 	destroy: function() {
-		var sureDelete = confirm("Are you sure you want to delete this item?");
+		var sureDelete = confirm('Are you sure you want to delete this item?');
 		if (sureDelete === true) {
 		//collection.pop([options])
 			this.model.destroy();
@@ -81,4 +100,3 @@ var ListView = Backbone.View.extend({
 		this.render();
 	}
 });
-
